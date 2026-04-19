@@ -1,0 +1,24 @@
+﻿---
+const { cta, company } = Astro.props;
+---
+
+<section class="section-space">
+  <div class="section-shell">
+    <div class="premium-card accent-ring overflow-hidden rounded-[36px] p-8 sm:p-10 lg:p-14">
+      <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div>
+          <span class="eyebrow">Связь</span>
+          <h2 class="section-title mt-4">{cta.title}</h2>
+          <p class="mt-5 max-w-2xl text-base leading-8 text-slate-300">{cta.text}</p>
+        </div>
+        <div class="grid gap-3 lg:justify-end">
+          <a href="#contacts" class="button-primary">Открыть контакты</a>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a href={company.phoneHref} class="button-secondary">Позвонить</a>
+            <a href={company.whatsappHref} class="button-secondary">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

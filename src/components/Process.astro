@@ -1,0 +1,23 @@
+﻿---
+const { process } = Astro.props;
+---
+
+<section class="section-space">
+  <div class="section-shell">
+    <div class="max-w-3xl">
+      <span class="eyebrow">Как мы работаем</span>
+      <h2 class="section-title mt-4">Понятный путь от заявки до готового результата</h2>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {
+        process.map((step, index) => (
+          <article class="premium-card rounded-[28px] p-6">
+            <div class="text-sm font-semibold text-accent-soft">Шаг {index + 1}</div>
+            <h3 class="mt-6 text-xl font-semibold text-white">{step}</h3>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

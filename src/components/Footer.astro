@@ -1,0 +1,24 @@
+﻿---
+const { company, navigation } = Astro.props;
+---
+
+<footer class="border-t border-white/[0.08] py-10">
+  <div class="section-shell flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+    <div>
+      <div class="font-display text-xl font-semibold text-white">{company.name}</div>
+      <div class="mt-2 text-sm leading-7 text-slate-400">
+        {company.address} · {company.phone}
+      </div>
+    </div>
+
+    <nav class="flex flex-wrap gap-4 text-sm text-slate-400">
+      {
+        navigation.map((item) => (
+          <a href={item.href} class="transition hover:text-white">{item.label}</a>
+        ))
+      }
+      <a href="#top" class="transition hover:text-white">Политика конфиденциальности</a>
+    </nav>
+  </div>
+</footer>
+

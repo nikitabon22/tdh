@@ -1,0 +1,48 @@
+﻿---
+const { company } = Astro.props;
+---
+
+<section id="contacts" class="section-space pt-0">
+  <div class="section-shell">
+    <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
+      <div class="premium-card rounded-[32px] p-8 sm:p-10">
+        <span class="eyebrow">Контакты</span>
+        <h2 class="section-title mt-4">Связаться с TDH Studio просто</h2>
+
+        <div class="mt-8 grid gap-6 text-sm text-slate-300 sm:grid-cols-2">
+          <div>
+            <div class="text-xs uppercase tracking-[0.22em] text-slate-500">Адрес</div>
+            <p class="mt-3 text-base leading-7 text-white">{company.address}</p>
+            <p class="mt-2 leading-7">{company.landmark}</p>
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-[0.22em] text-slate-500">Контакты</div>
+            <a href={company.phoneHref} class="mt-3 block text-base font-semibold leading-7 text-white">
+              {company.phone}
+            </a>
+            <p class="mt-2 leading-7">{company.person}</p>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          <a href={company.phoneHref} class="button-primary">Позвонить</a>
+          <a href={company.whatsappHref} class="button-secondary">WhatsApp</a>
+          <a href={company.telegramHref} class="button-secondary">Telegram</a>
+        </div>
+      </div>
+
+      <div class="premium-card relative overflow-hidden rounded-[32px] p-1">
+        <div class="flex h-full min-h-[320px] flex-col justify-end rounded-[28px] border border-white/[0.06] bg-[radial-gradient(circle_at_top,rgba(212,168,79,0.22),transparent_24%),linear-gradient(180deg,#0f1620_0%,#090c12_100%)] p-8">
+          <div class="max-w-sm">
+            <div class="text-xs uppercase tracking-[0.22em] text-accent-soft">Локация</div>
+            <h3 class="mt-3 text-2xl font-semibold text-white">Удобный ориентир и быстрый маршрут</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              Территория бывшей заправки Extra. По нажатию откроется карта с маршрутом.
+            </p>
+            <a href={company.mapsHref} class="button-secondary mt-6">Открыть карту</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

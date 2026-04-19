@@ -1,0 +1,37 @@
+﻿---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Benefits from "../components/Benefits.astro";
+import Services from "../components/Services.astro";
+import Results from "../components/Results.astro";
+import Process from "../components/Process.astro";
+import Gallery from "../components/Gallery.astro";
+import Reviews from "../components/Reviews.astro";
+import CTA from "../components/CTA.astro";
+import Contacts from "../components/Contacts.astro";
+import Footer from "../components/Footer.astro";
+import { siteContent } from "../data/siteContent.js";
+---
+
+<BaseLayout
+  title={siteContent.seo.title}
+  description={siteContent.seo.description}
+  ogTitle={siteContent.seo.ogTitle}
+  ogDescription={siteContent.seo.ogDescription}
+  ogImage={siteContent.hero.image.src}
+>
+  <Header company={siteContent.company} navigation={siteContent.navigation} />
+  <main>
+    <Hero hero={siteContent.hero} company={siteContent.company} />
+    <Benefits benefits={siteContent.benefits} />
+    <Services services={siteContent.services} />
+    <Results results={siteContent.results} />
+    <Process process={siteContent.process} />
+    <Gallery gallery={siteContent.gallery} />
+    <Reviews reviews={siteContent.reviews} />
+    <CTA cta={siteContent.cta} company={siteContent.company} />
+    <Contacts company={siteContent.company} />
+  </main>
+  <Footer company={siteContent.company} navigation={siteContent.navigation} />
+</BaseLayout>

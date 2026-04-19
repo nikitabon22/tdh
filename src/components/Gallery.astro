@@ -1,0 +1,44 @@
+﻿---
+const { gallery } = Astro.props;
+---
+
+<section id="gallery" class="section-space">
+  <div class="section-shell">
+    <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-3xl">
+        <span class="eyebrow">Работы</span>
+        <h2 class="section-title mt-4">Портфолио в эстетике премиального автоухода</h2>
+      </div>
+      <p class="section-copy">
+        Подборка направлений, с которыми чаще всего обращаются в TDH Studio: кузов, салон,
+        оптика, интерьер и защитные решения.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {
+        gallery.map((item) => (
+          <article class="group premium-card overflow-hidden rounded-[28px]">
+            <div class="relative overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.alt}
+                class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/[0.15] to-transparent"></div>
+              <div class="absolute left-4 top-4 rounded-full border border-white/10 bg-canvas/70 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-accent-soft">
+                {item.category}
+              </div>
+            </div>
+            <div class="p-5">
+              <h3 class="text-lg font-semibold text-white">{item.title}</h3>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+

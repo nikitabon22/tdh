@@ -1,0 +1,30 @@
+﻿---
+const { reviews } = Astro.props;
+---
+
+<section id="reviews" class="section-space">
+  <div class="section-shell">
+    <div class="max-w-3xl">
+      <span class="eyebrow">Отзывы</span>
+      <h2 class="section-title mt-4">Клиенты возвращаются за результатом и отношением</h2>
+    </div>
+
+    <div class="mt-10 grid gap-4 lg:grid-cols-3">
+      {
+        reviews.map((review) => (
+          <article class="premium-card rounded-[28px] p-6 sm:p-7">
+            <div class="flex items-center gap-1 text-accent-soft">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+            <p class="mt-5 text-sm leading-7 text-slate-300">{review.text}</p>
+            <div class="mt-6 text-sm font-semibold text-white">{review.name}</div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

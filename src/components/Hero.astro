@@ -1,0 +1,83 @@
+﻿---
+const { hero, company } = Astro.props;
+---
+
+<section id="top" class="relative overflow-hidden pt-28 sm:pt-32">
+  <div class="absolute inset-0 bg-hero-grid opacity-70"></div>
+  <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+  <div class="section-shell section-space relative">
+    <div class="grid items-center gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:gap-14">
+      <div class="relative z-10">
+        <span class="eyebrow">{hero.eyebrow}</span>
+        <h1 class="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.02] text-white sm:text-5xl lg:text-7xl">
+          {hero.title}
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+          {hero.subtitle}
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#contacts" class="button-primary shadow-accent">Связаться сейчас</a>
+          <a href={company.phoneHref} class="button-secondary">Позвонить</a>
+        </div>
+
+        <div class="glass-strip mt-10 grid gap-3 p-3 sm:grid-cols-3">
+          {
+            hero.highlights.map((item) => (
+              <div class="rounded-[22px] border border-white/[0.08] bg-black/20 px-4 py-4">
+                <div class="text-sm font-semibold text-white">{item}</div>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-6 text-sm text-slate-300">
+          <div>
+            <span class="text-accent-soft">Город:</span> {company.city}
+          </div>
+          <div>
+            <span class="text-accent-soft">Контакт:</span> {company.person}
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="absolute -left-6 -top-6 hidden h-40 w-40 rounded-full bg-accent/20 blur-3xl lg:block"></div>
+        <div class="absolute -right-8 bottom-10 hidden h-48 w-48 rounded-full bg-sky-400/15 blur-3xl lg:block"></div>
+        <div class="premium-card accent-ring relative overflow-hidden rounded-[32px]">
+          <img
+            src={hero.image.src}
+            alt={hero.image.alt}
+            class="h-[420px] w-full object-cover sm:h-[520px] lg:h-[640px]"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/10 to-transparent"></div>
+          <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+            <div class="grid gap-3 sm:grid-cols-[1.2fr_0.8fr]">
+              <div class="premium-card rounded-[28px] bg-canvas/[0.65] p-5">
+                <p class="text-xs uppercase tracking-[0.24em] text-accent-soft">
+                  {company.slogan}
+                </p>
+                <p class="mt-3 text-sm leading-7 text-slate-200">
+                  {company.offer}
+                </p>
+              </div>
+              <div class="glass-strip rounded-[28px] p-5">
+                <div class="text-xs uppercase tracking-[0.2em] text-slate-400">Быстрая связь</div>
+                <a href={company.phoneHref} class="mt-3 block text-xl font-semibold text-white">
+                  {company.phone}
+                </a>
+                <div class="mt-4 flex gap-2">
+                  <a href={company.whatsappHref} class="button-secondary px-4 py-2 text-xs">WhatsApp</a>
+                  <a href={company.telegramHref} class="button-secondary px-4 py-2 text-xs">Telegram</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
