@@ -1,4 +1,6 @@
-﻿export const siteContent = {
+﻿import vkBrowserWorks from "./vkBrowserWorks.json";
+
+export const siteContent = {
   company: {
     name: "TDH Studio",
     logoTop: "TDH",
@@ -119,106 +121,6 @@
       icon: "tag"
     }
   ],
-  works: [
-    {
-      title: "Выполненная работа #8",
-      category: "Детейлинг",
-      url: "https://vk.com/wall-233387765_8",
-      image: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=85",
-      alt: "Выполненная работа TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #9",
-      category: "Полировка",
-      url: "https://vk.com/wall-233387765_9",
-      image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
-      alt: "Полировка автомобиля TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #10",
-      category: "Салон",
-      url: "https://vk.com/wall-233387765_10",
-      image: "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=900&q=85",
-      alt: "Работа с салоном автомобиля TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #11",
-      category: "Оптика",
-      url: "https://vk.com/wall-233387765_11",
-      image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=85",
-      alt: "Работа с автомобильной оптикой TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #12",
-      category: "Кузов",
-      url: "https://vk.com/wall-233387765_12",
-      image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85",
-      alt: "Работа с кузовом автомобиля TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #13",
-      category: "Интерьер",
-      url: "https://vk.com/wall-233387765_13",
-      image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",
-      alt: "Работа с интерьером автомобиля TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #15",
-      category: "Детейлинг",
-      url: "https://vk.com/wall-233387765_15",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=85",
-      alt: "Детейлинг автомобиля TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #17",
-      category: "Полировка",
-      url: "https://vk.com/wall-233387765_17",
-      image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&w=900&q=85",
-      alt: "Полировка и детейлинг автомобиля TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #18",
-      category: "Химчистка",
-      url: "https://vk.com/wall-233387765_18",
-      image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=900&q=85",
-      alt: "Химчистка автомобиля TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #19",
-      category: "Фары",
-      url: "https://vk.com/wall-233387765_19",
-      image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=85",
-      alt: "Фары автомобиля после работ TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #20",
-      category: "Кузов",
-      url: "https://vk.com/wall-233387765_20",
-      image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=85",
-      alt: "Защита и уход за кузовом TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #21",
-      category: "Сухой туман",
-      url: "https://vk.com/wall-233387765_21",
-      image: "https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?auto=format&fit=crop&w=900&q=85",
-      alt: "Удаление запахов в автомобиле TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #22",
-      category: "Интерьер",
-      url: "https://vk.com/wall-233387765_22",
-      image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=85",
-      alt: "Интерьер автомобиля после работ TDH Studio из VK"
-    },
-    {
-      title: "Выполненная работа #23",
-      category: "Детейлинг",
-      url: "https://vk.com/wall-233387765_23",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=85",
-      alt: "Готовый автомобиль после детейлинга TDH Studio из VK"
-    }
-  ]
+  works: vkBrowserWorks
 };
-
 
