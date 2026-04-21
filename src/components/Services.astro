@@ -13,7 +13,7 @@ const { services } = Astro.props;
     {services.map((service) => (
       <article class="panel-border group overflow-hidden rounded-md">
         <div class="relative h-[190px] overflow-hidden sm:h-[210px]">
-          <img src={service.image} alt={service.alt} class="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0" loading="lazy" decoding="async" />
+          <img src={service.image} alt={service.alt} class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
           <div class="absolute inset-0 bg-gradient-to-t from-[#030507] via-[#030507]/25 to-transparent"></div>
         </div>
         <div class="flex min-h-[126px] gap-5 p-7">
@@ -28,5 +28,6 @@ const { services } = Astro.props;
     ))}
   </div>
 </section>
+
 
 

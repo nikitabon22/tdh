@@ -56,7 +56,7 @@ export const siteContent = {
       price: "15 000–30 000 ₽",
       image:
         "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
-      alt: "Машинная полировка кузова автомобиля"
+      alt: "Полировка кузова автомобиля машинкой"
     },
     {
       title: "Перетяжка потолков",
@@ -64,7 +64,7 @@ export const siteContent = {
       price: "24 000–36 000 ₽",
       image:
         "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",
-      alt: "Аккуратный салон автомобиля после обновления"
+      alt: "Премиальный автомобильный интерьер для перетяжки потолка"
     },
     {
       title: "Установка Bi-led линз",
@@ -72,15 +72,15 @@ export const siteContent = {
       price: "25 000–45 000 ₽",
       image:
         "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=85",
-      alt: "Автомобильные линзы и яркая оптика"
+      alt: "Автомобильная оптика и элементы фар"
     },
     {
       title: "Полировка фар",
       description: "Крупная полировка фар и восстановление прозрачности",
       price: "2 500–5 000 ₽",
       image:
-        "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=85",
-      alt: "Полировка и восстановление фар автомобиля"
+        "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=85",
+      alt: "Фара автомобиля после восстановления прозрачности"
     },
     {
       title: "Химчистка салона",
@@ -88,7 +88,7 @@ export const siteContent = {
       price: "По договорённости",
       image:
         "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=900&q=85",
-      alt: "Химчистка салона автомобиля"
+      alt: "Чистый автомобильный салон после химчистки"
     },
     {
       title: "Сухой туман",
@@ -96,7 +96,7 @@ export const siteContent = {
       price: "1 000–1 500 ₽",
       image:
         "https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?auto=format&fit=crop&w=900&q=85",
-      alt: "Удаление запахов сухим туманом в салоне автомобиля"
+      alt: "Обработка салона автомобиля сухим туманом"
     }
   ],
   benefits: [
@@ -123,4 +123,6 @@ export const siteContent = {
   ],
   works: vkBrowserWorks
 };
+
+
 
