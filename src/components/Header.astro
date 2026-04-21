@@ -2,63 +2,34 @@
 const { company, navigation } = Astro.props;
 ---
 
-<header class="fixed inset-x-0 top-0 z-50">
-  <div class="section-shell pt-4">
-    <div class="premium-card accent-ring flex items-center justify-between rounded-full px-4 py-3 sm:px-6">
-      <a href="#top" class="flex items-center gap-3">
-        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-accent/[0.15] text-sm font-bold text-accent-soft">TDH</span>
-        <div>
-          <div class="font-display text-base font-semibold tracking-[0.18em] text-white">
-            {company.name}
-          </div>
-          <div class="text-[11px] uppercase tracking-[0.22em] text-slate-400">
-            Auto care studio
-          </div>
-        </div>
-      </a>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/[0.1] bg-[#020406]/90 backdrop-blur-md">
+  <div class="section-shell flex h-[68px] items-center justify-between">
+    <a href="#top" class="relative flex w-[210px] flex-col items-start leading-none">
+      <span class="absolute -top-3 left-0 h-px w-[138px] bg-[#d8a139]"></span>
+      <span class="font-display text-[34px] font-bold uppercase leading-[0.9] tracking-[0.16em] text-white">TDH</span>
+      <span class="mt-2 text-[11px] font-extrabold uppercase leading-none tracking-[0.48em] text-[#d8a139]">Detailing Studio</span>
+    </a>
 
-      <nav class="hidden items-center gap-6 lg:flex">
-        {
-          navigation.map((item) => (
-            <a href={item.href} class="text-sm text-slate-300 transition hover:text-white">
-              {item.label}
-            </a>
-          ))
-        }
-      </nav>
+    <nav class="hidden items-center gap-12 lg:flex">
+      {navigation.map((item) => (
+        <a href={item.href} class="text-[13px] font-medium text-slate-200 transition hover:text-[#d8a139]">{item.label}</a>
+      ))}
+    </nav>
 
-      <div class="hidden lg:block">
-        <a href="#contacts" class="button-primary">Связаться</a>
-      </div>
+    <a href={company.phoneHref} class="button-outline hidden h-11 min-w-[228px] lg:inline-flex">
+      <span aria-hidden="true">☎</span>
+      Связаться с нами
+    </a>
 
-      <button
-        type="button"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white lg:hidden"
-        data-menu-toggle
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Открыть меню"
-      >
-        <span class="sr-only">Открыть меню</span>
-        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path>
-        </svg>
-      </button>
-    </div>
+    <button type="button" class="inline-flex h-10 w-10 items-center justify-center border border-white/10 text-white lg:hidden" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"></path></svg>
+    </button>
+  </div>
 
-    <div
-      id="mobile-menu"
-      class="premium-card mt-3 hidden flex-col gap-2 rounded-[28px] px-4 py-4 lg:hidden"
-      data-mobile-menu
-    >
-      {
-        navigation.map((item) => (
-          <a href={item.href} class="rounded-2xl px-4 py-3 text-sm text-slate-200 transition hover:bg-white/5">
-            {item.label}
-          </a>
-        ))
-      }
-      <a href="#contacts" class="button-primary mt-2">Связаться</a>
+  <div id="mobile-menu" class="section-shell hidden pb-4 lg:hidden" data-mobile-menu>
+    <div class="panel-border grid gap-1 p-3">
+      {navigation.map((item) => (<a href={item.href} class="px-4 py-3 text-sm text-slate-200 hover:text-[#d8a139]">{item.label}</a>))}
+      <a href={company.phoneHref} class="button-gold mt-2">Связаться с нами</a>
     </div>
   </div>
 </header>
@@ -66,18 +37,15 @@ const { company, navigation } = Astro.props;
 <script>
   const toggleButton = document.querySelector("[data-menu-toggle]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
-
   if (toggleButton && mobileMenu) {
     toggleButton.addEventListener("click", () => {
       const isHidden = mobileMenu.classList.toggle("hidden");
       toggleButton.setAttribute("aria-expanded", String(!isHidden));
     });
-
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-        toggleButton.setAttribute("aria-expanded", "false");
-      });
-    });
+    mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      toggleButton.setAttribute("aria-expanded", "false");
+    }));
   }
 </script>
+

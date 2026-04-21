@@ -1,0 +1,37 @@
+﻿---
+const { works } = Astro.props;
+---
+
+<section id="works" class="section-shell pb-3 pt-6">
+  <div class="section-heading">
+    <div class="gold-line"></div>
+    <h2>Выполненные работы</h2>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+    {works.map((work) => (
+      <a href={work.url} target="_blank" rel="noopener noreferrer" class="panel-border group overflow-hidden rounded-md">
+        <div class="relative h-[245px] overflow-hidden">
+          <img
+            src={work.image}
+            alt={work.alt}
+            class="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#020406] via-transparent to-transparent"></div>
+          <div class="absolute left-5 top-5 rounded-sm border border-[#b9812b]/60 bg-[#020406]/70 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[#d8a139]">
+            {work.category}
+          </div>
+          <div class="absolute bottom-5 left-5 right-5">
+            <h3 class="font-display text-xl font-semibold uppercase tracking-[0.08em] text-white">
+              {work.title}
+            </h3>
+            <p class="mt-2 text-xs uppercase tracking-[0.16em] text-slate-400">Смотреть в VK</p>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
