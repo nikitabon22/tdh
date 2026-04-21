@@ -40,8 +40,8 @@ export const siteContent = {
     subtitle:
       "Мы заботимся о каждой детали вашего автомобиля, чтобы он выглядел безупречно.",
     image: {
-      src: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1800&q=85",
-      alt: "Темный автомобиль в студийном свете"
+      src: "/images/heto.png",
+      alt: "Автомобиль TDH Studio в шапке сайта"
     },
     stats: [
       { title: "Профессионалы", text: "Опытные мастера", icon: "user" },
@@ -117,6 +117,7 @@ export const siteContent = {
   ],
   works: vkBrowserWorks
 };
+
 
 
 
