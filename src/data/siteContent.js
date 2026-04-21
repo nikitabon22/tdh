@@ -54,49 +54,43 @@ export const siteContent = {
       title: "Полировка кузова",
       description: "Обновляем блеск и удаляем мелкие царапины",
       price: "15 000–30 000 ₽",
-      image:
-        "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
-      alt: "Полировка кузова автомобиля машинкой"
+      image: "/images/uslugi/1.png",
+      alt: "Полировка кузова автомобиля"
     },
     {
       title: "Перетяжка потолков",
       description: "Перетяжка потолков автомобиля высококачественными материалами",
       price: "24 000–36 000 ₽",
-      image:
-        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=85",
-      alt: "Премиальный автомобильный интерьер для перетяжки потолка"
+      image: "/images/uslugi/2.png",
+      alt: "Перетяжка потолка автомобиля"
     },
     {
       title: "Установка Bi-led линз",
       description: "Установка линз и bi-led линз для улучшения освещения",
       price: "25 000–45 000 ₽",
-      image:
-        "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=85",
-      alt: "Автомобильная оптика и элементы фар"
+      image: "/images/uslugi/3.png",
+      alt: "Установка Bi-led линз"
     },
     {
       title: "Полировка фар",
       description: "Крупная полировка фар и восстановление прозрачности",
       price: "2 500–5 000 ₽",
-      image:
-        "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=85",
-      alt: "Фара автомобиля после восстановления прозрачности"
+      image: "/images/uslugi/4.png",
+      alt: "Полировка фар автомобиля"
     },
     {
       title: "Химчистка салона",
       description: "Профессиональная химчистка для чистоты и свежести вашего автомобиля",
       price: "По договорённости",
-      image:
-        "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=900&q=85",
-      alt: "Чистый автомобильный салон после химчистки"
+      image: "/images/uslugi/5.png",
+      alt: "Химчистка салона автомобиля"
     },
     {
       title: "Сухой туман",
       description: "Устраним любые въевшиеся запахи: табак, животные, сырость и т.д.",
       price: "1 000–1 500 ₽",
-      image:
-        "https://images.unsplash.com/photo-1486496572940-2bb2341fdbdf?auto=format&fit=crop&w=900&q=85",
-      alt: "Обработка салона автомобиля сухим туманом"
+      image: "/images/uslugi/6.png",
+      alt: "Удаление запахов сухим туманом"
     }
   ],
   benefits: [
@@ -123,6 +117,8 @@ export const siteContent = {
   ],
   works: vkBrowserWorks
 };
+
+
 
 
 
