@@ -7,7 +7,10 @@
                     "dev":  "astro dev",
                     "build":  "astro build",
                     "preview":  "astro preview",
-                    "check":  "astro check"
+                    "check":  "astro check",
+                    "test:smoke":  "node tests/smoke-layout.mjs --smoke",
+                    "test:layout":  "node tests/smoke-layout.mjs --layout",
+                    "test:e2e":  "node tests/smoke-layout.mjs"
                 },
     "dependencies":  {
                          "astro":  "^5.7.2"
