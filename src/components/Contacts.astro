@@ -39,32 +39,22 @@ const { company } = Astro.props;
       </div>
     </div>
 
-    <div class="relative min-h-[300px] overflow-hidden rounded-[3px] border border-white/[0.08] bg-[#101722]">
+    <div class="relative min-h-[360px] overflow-hidden rounded-[3px] border border-white/[0.08] bg-[#101722] shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
       <iframe
         title="Карта проезда к TDH Studio"
-        src="https://yandex.ru/map-widget/v1/?text=%D0%93%D0%BE%D1%80%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9E%D1%81%D1%82%D0%B0%D0%BF%D0%B5%D0%BD%D0%BA%D0%BE%2045%D0%90&z=16"
-        class="absolute inset-0 h-full w-full border-0 grayscale invert-[0.9] hue-rotate-180 contrast-125 brightness-[0.65]"
+        src={company.mapWidgetHref}
+        class="absolute inset-0 h-full w-full border-0"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(2,4,6,0.1),rgba(2,4,6,0.2))]"></div>
-      <div class="pointer-events-none absolute left-[48%] top-[56%] -translate-x-1/2 -translate-y-full">
-        <div class="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#d8a139] text-[#050505] shadow-[0_0_35px_rgba(216,161,57,0.55)]">
-          <span class="absolute h-20 w-20 rounded-full border border-[#d8a139]/35"></span>
-          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 21h16" stroke-linecap="round" />
-            <path d="M6 21V8l6-4 6 4v13" stroke-linejoin="round" />
-            <path d="M9 21v-6h6v6M9 10h.01M12 10h.01M15 10h.01" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020406]/95 via-[#020406]/60 to-transparent"></div>
+      <div class="absolute bottom-5 left-5 right-5 flex flex-col gap-3 sm:left-auto sm:right-5 sm:w-[320px]">
+        <div class="rounded-[3px] border border-white/[0.1] bg-[#05080c]/95 p-4 shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-md">
+          <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-[#d8a139]">TDH Studio на карте</p>
+          <p class="mt-2 text-base font-extrabold text-white">{company.shortAddress}</p>
+          <p class="mt-1 text-sm text-slate-300">ориентир: бывшая заправка Extra</p>
         </div>
-        <div class="mx-auto h-0 w-0 border-l-[10px] border-r-[10px] border-t-[14px] border-l-transparent border-r-transparent border-t-[#d8a139]"></div>
-      </div>
-      <div class="absolute bottom-5 left-5 right-5 flex flex-col gap-3 sm:left-auto sm:right-5 sm:w-[286px]">
-        <div class="rounded-[3px] border border-white/[0.1] bg-[#05080c]/90 p-4 shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-md">
-          <p class="text-base font-extrabold text-white">{company.shortAddress}</p>
-          <p class="mt-1 text-sm text-slate-300">бывшая заправка Extra</p>
-        </div>
-        <a href={company.mapsHref} class="inline-flex h-11 items-center justify-center rounded-[3px] border border-[#b9812b]/80 bg-[#05080c]/90 px-4 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-100 transition hover:bg-[#b9812b]/15">
+        <a href={company.mapsHref} target="_blank" rel="noopener noreferrer" class="inline-flex h-11 items-center justify-center rounded-[3px] border border-[#b9812b]/80 bg-[#05080c]/95 px-4 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-100 transition hover:bg-[#b9812b]/15">
           Открыть карту
         </a>
       </div>
