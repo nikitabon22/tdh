@@ -16,6 +16,8 @@ export const siteContent = {
     person: "Yaroslav Dragunov",
     whatsappHref: "https://wa.me/79493359542",
     telegramHref: "https://t.me/yaroslav_dragunov",
+    mapWidgetHref:
+      "https://yandex.ru/map-widget/v1/?mode=search&text=%D0%93%D0%BE%D1%80%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9E%D1%81%D1%82%D0%B0%D0%BF%D0%B5%D0%BD%D0%BA%D0%BE%2045%D0%90&z=17",
     mapsHref:
       "https://yandex.ru/maps/?text=%D0%93%D0%BE%D1%80%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB.%20%D0%9E%D1%81%D1%82%D0%B0%D0%BF%D0%B5%D0%BD%D0%BA%D0%BE%2045%D0%90"
   },

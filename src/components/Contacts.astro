@@ -39,54 +39,24 @@ const { company } = Astro.props;
       </div>
     </div>
 
-    <div class="relative min-h-[360px] overflow-hidden rounded-[3px] border border-white/[0.08] bg-[#101722] shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
-      <svg aria-hidden="true" viewBox="0 0 860 420" class="absolute inset-0 h-full w-full" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="map-bg" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0%" stop-color="#111827" />
-            <stop offset="54%" stop-color="#090d13" />
-            <stop offset="100%" stop-color="#030507" />
-          </linearGradient>
-          <filter id="map-glow" x="-40%" y="-40%" width="180%" height="180%">
-            <feGaussianBlur stdDeviation="7" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        <rect width="860" height="420" fill="url(#map-bg)" />
-        <path d="M-40 320 C120 260 240 284 390 224 C540 164 650 145 910 108" fill="none" stroke="#28313d" stroke-width="50" stroke-linecap="round" />
-        <path d="M-40 320 C120 260 240 284 390 224 C540 164 650 145 910 108" fill="none" stroke="#3b4654" stroke-width="24" stroke-linecap="round" />
-        <path d="M-40 320 C120 260 240 284 390 224 C540 164 650 145 910 108" fill="none" stroke="#d8a139" stroke-width="2" stroke-dasharray="14 18" opacity="0.72" />
-        <path d="M285 -20 C292 105 336 202 398 438" fill="none" stroke="#242c36" stroke-width="42" stroke-linecap="round" />
-        <path d="M285 -20 C292 105 336 202 398 438" fill="none" stroke="#34404e" stroke-width="18" stroke-linecap="round" />
-        <path d="M610 -20 C548 85 532 184 520 438" fill="none" stroke="#202832" stroke-width="34" stroke-linecap="round" />
-        <path d="M610 -20 C548 85 532 184 520 438" fill="none" stroke="#313b48" stroke-width="14" stroke-linecap="round" />
-        <path d="M90 40 H236 M72 122 H214 M650 298 H820 M596 360 H752" stroke="#202832" stroke-width="20" stroke-linecap="round" opacity="0.8" />
-        <path d="M90 40 H236 M72 122 H214 M650 298 H820 M596 360 H752" stroke="#303946" stroke-width="8" stroke-linecap="round" opacity="0.95" />
-        <rect x="86" y="178" width="145" height="70" rx="6" fill="#111923" stroke="#263241" />
-        <rect x="650" y="160" width="112" height="82" rx="6" fill="#121b26" stroke="#263241" />
-        <rect x="455" y="42" width="116" height="74" rx="6" fill="#111923" stroke="#263241" />
-        <circle cx="430" cy="212" r="58" fill="#d8a139" opacity="0.13" />
-        <circle cx="430" cy="212" r="35" fill="#d8a139" opacity="0.2" />
-        <path d="M430 141 C398 141 372 166 372 198 C372 240 430 294 430 294 C430 294 488 240 488 198 C488 166 462 141 430 141Z" fill="#d8a139" filter="url(#map-glow)" />
-        <circle cx="430" cy="198" r="18" fill="#050505" />
-        <path d="M420 201 h20 M430 191 v20" stroke="#d8a139" stroke-width="4" stroke-linecap="round" />
-        <text x="452" y="138" fill="#ffffff" font-family="Inter, Arial" font-size="22" font-weight="800">TDH Studio</text>
-        <text x="452" y="164" fill="#d8a139" font-family="Inter, Arial" font-size="14" font-weight="700">ул. Остапенко 45А</text>
-        <text x="80" y="278" fill="#7f8794" font-family="Inter, Arial" font-size="13" font-weight="700" letter-spacing="1.2">ул. Остапенко</text>
-        <text x="606" y="90" fill="#626b78" font-family="Inter, Arial" font-size="12" font-weight="700" letter-spacing="1.1">ориентир: бывшая заправка Extra</text>
-      </svg>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,transparent_0%,transparent_34%,rgba(2,4,6,0.34)_68%,rgba(2,4,6,0.82)_100%)]"></div>
-      <div class="absolute bottom-5 left-5 right-5 flex flex-col gap-3 sm:left-auto sm:right-5 sm:w-[320px]">
-        <div class="rounded-[3px] border border-white/[0.1] bg-[#05080c]/95 p-4 shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-md">
-          <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-[#d8a139]">Схема проезда</p>
+    <div class="overflow-hidden rounded-[3px] border border-white/[0.08] bg-[#101722] shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
+      <div class="relative h-[360px] bg-[#101722]">
+        <iframe
+          title="Карта проезда к TDH Studio"
+          src={company.mapWidgetHref}
+          class="absolute inset-0 h-full w-full border-0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="flex flex-col gap-4 border-t border-white/[0.08] bg-[#05080c] p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-[#d8a139]">TDH Studio на карте</p>
           <p class="mt-2 text-base font-extrabold text-white">{company.shortAddress}</p>
           <p class="mt-1 text-sm text-slate-300">ориентир: бывшая заправка Extra</p>
         </div>
-        <a href={company.mapsHref} target="_blank" rel="noopener noreferrer" class="inline-flex h-11 items-center justify-center rounded-[3px] border border-[#b9812b]/80 bg-[#05080c]/95 px-4 text-[11px] font-bold uppercase tracking-[0.22em] text-slate-100 transition hover:bg-[#b9812b]/15">
-          Открыть настоящую карту
+        <a href={company.mapsHref} target="_blank" rel="noopener noreferrer" class="inline-flex h-11 shrink-0 items-center justify-center rounded-[3px] border border-[#b9812b]/80 px-4 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-100 transition hover:bg-[#b9812b]/15">
+          Открыть в Яндекс.Картах
         </a>
       </div>
     </div>
