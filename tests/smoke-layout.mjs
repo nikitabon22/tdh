@@ -82,6 +82,37 @@ async function collectLayoutIssues(page) {
   });
 }
 
+async function scrollThroughPage(page) {
+  const height = await page.evaluate(() => document.documentElement.scrollHeight);
+  const viewportHeight = page.viewportSize()?.height || 900;
+
+  for (let y = 0; y < height; y += Math.floor(viewportHeight * 0.75)) {
+    await page.evaluate((nextY) => window.scrollTo(0, nextY), y);
+    await page.waitForTimeout(250);
+  }
+
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await page.waitForTimeout(700);
+}
+
+async function collectImageIssues(page) {
+  return await page.evaluate(() => {
+    const issues = [];
+    const images = [...document.images].filter((img) => {
+      const rect = img.getBoundingClientRect();
+      return rect.width >= 80 && rect.height >= 80;
+    });
+
+    for (const img of images) {
+      if (!img.complete || img.naturalWidth === 0 || img.naturalHeight === 0) {
+        issues.push(`Image failed to load: ${img.currentSrc || img.src}`);
+      }
+    }
+
+    return issues;
+  });
+}
+
 async function runSmoke(page) {
   await page.goto(targetUrl, { waitUntil: "domcontentloaded", timeout: 45000 });
   await page.waitForLoadState("networkidle", { timeout: 20000 }).catch(() => {});
@@ -148,8 +179,11 @@ async function run() {
       }
 
       if (mode === "layout" || mode === "all") {
+        await scrollThroughPage(page);
         const issues = await collectLayoutIssues(page);
         for (const issue of issues) failures.push(`${viewport.name}: ${issue}`);
+        const imageIssues = await collectImageIssues(page);
+        for (const issue of imageIssues) failures.push(`${viewport.name}: ${issue}`);
         await page.screenshot({
           path: path.resolve("tmp", "test-screenshots", `${viewport.name}.png`),
           fullPage: true
