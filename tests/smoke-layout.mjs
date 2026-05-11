@@ -92,7 +92,7 @@ async function scrollThroughPage(page) {
   }
 
   await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
-  await page.waitForTimeout(700);
+  await page.waitForTimeout(1800);
 }
 
 async function collectImageIssues(page) {
@@ -184,6 +184,8 @@ async function run() {
         for (const issue of issues) failures.push(`${viewport.name}: ${issue}`);
         const imageIssues = await collectImageIssues(page);
         for (const issue of imageIssues) failures.push(`${viewport.name}: ${issue}`);
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await page.waitForTimeout(500);
         await page.screenshot({
           path: path.resolve("tmp", "test-screenshots", `${viewport.name}.png`),
           fullPage: true
