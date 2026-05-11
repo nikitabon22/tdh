@@ -40,15 +40,77 @@ const { company } = Astro.props;
     </div>
 
     <div class="overflow-hidden rounded-[3px] border border-white/[0.08] bg-[#101722] shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
-      <div class="relative h-[360px] bg-[#101722]">
-        <iframe
-          title="Карта проезда к TDH Studio"
-          src={company.mapWidgetHref}
-          class="absolute inset-0 h-full w-full border-0"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+      <a
+        href={company.mapsHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Открыть TDH Studio в Яндекс.Картах"
+        class="group relative block h-[360px] bg-[#070a0f]"
+      >
+        <svg aria-hidden="true" viewBox="0 0 860 390" class="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="tdh-map-bg" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#111720" />
+              <stop offset="58%" stop-color="#080c12" />
+              <stop offset="100%" stop-color="#030507" />
+            </linearGradient>
+            <linearGradient id="tdh-map-water" x1="0" x2="1">
+              <stop offset="0%" stop-color="#163247" />
+              <stop offset="100%" stop-color="#1d4f66" />
+            </linearGradient>
+            <filter id="tdh-pin-shadow" x="-60%" y="-60%" width="220%" height="220%">
+              <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity="0.45" />
+              <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#d8a139" flood-opacity="0.45" />
+            </filter>
+          </defs>
+
+          <rect width="860" height="390" fill="url(#tdh-map-bg)" />
+          <path d="M0 88 C110 78 188 112 265 86 C336 62 413 34 520 44 C641 55 715 22 860 42 L860 0 L0 0 Z" fill="#121821" opacity="0.92" />
+          <path d="M0 332 C64 280 126 255 188 278 C250 302 292 382 362 390 L0 390 Z" fill="url(#tdh-map-water)" opacity="0.88" />
+          <path d="M250 390 C292 312 360 268 456 275 C550 282 594 334 674 320 C745 308 793 259 860 238 L860 390 Z" fill="#20351f" opacity="0.9" />
+          <path d="M290 390 C331 325 386 300 461 306 C543 312 600 350 679 336 C759 322 806 284 860 270" fill="none" stroke="#436640" stroke-width="3" opacity="0.55" />
+
+          <path d="M-20 130 C122 104 214 110 322 137 C440 167 529 162 659 138 C730 126 794 119 880 122" fill="none" stroke="#303946" stroke-width="48" stroke-linecap="round" />
+          <path d="M-20 130 C122 104 214 110 322 137 C440 167 529 162 659 138 C730 126 794 119 880 122" fill="none" stroke="#535d6a" stroke-width="18" stroke-linecap="round" />
+          <path d="M-20 130 C122 104 214 110 322 137 C440 167 529 162 659 138 C730 126 794 119 880 122" fill="none" stroke="#79828e" stroke-width="2" stroke-dasharray="18 18" opacity="0.45" />
+
+          <path d="M332 -24 C344 54 380 104 420 164 C463 229 488 294 492 414" fill="none" stroke="#252d38" stroke-width="34" stroke-linecap="round" />
+          <path d="M332 -24 C344 54 380 104 420 164 C463 229 488 294 492 414" fill="none" stroke="#46505e" stroke-width="13" stroke-linecap="round" />
+          <path d="M665 -18 C640 74 637 152 662 228 C681 288 714 335 760 414" fill="none" stroke="#232b35" stroke-width="30" stroke-linecap="round" />
+          <path d="M665 -18 C640 74 637 152 662 228 C681 288 714 335 760 414" fill="none" stroke="#3f4a57" stroke-width="12" stroke-linecap="round" />
+          <path d="M98 56 H232 M76 206 H224 M570 62 H716 M625 255 H830" stroke="#242c36" stroke-width="24" stroke-linecap="round" opacity="0.9" />
+          <path d="M98 56 H232 M76 206 H224 M570 62 H716 M625 255 H830" stroke="#3a4451" stroke-width="8" stroke-linecap="round" opacity="0.95" />
+
+          <rect x="112" y="154" width="92" height="54" rx="5" fill="#171e28" stroke="#303a47" />
+          <rect x="520" y="82" width="72" height="44" rx="5" fill="#171e28" stroke="#303a47" />
+          <rect x="690" y="68" width="118" height="52" rx="5" fill="#171e28" stroke="#303a47" />
+          <rect x="610" y="178" width="154" height="34" rx="5" fill="#171e28" stroke="#303a47" />
+          <rect x="338" y="214" width="72" height="42" rx="5" fill="#171e28" stroke="#303a47" />
+
+          <g opacity="0.78" font-family="Inter, Arial" font-weight="700">
+            <text x="355" y="70" fill="#8b94a3" font-size="13" transform="rotate(61 355 70)">ул. Остапенко</text>
+            <text x="584" y="112" fill="#7b8493" font-size="12">Полиция</text>
+            <text x="705" y="102" fill="#7b8493" font-size="12">Школа N 40</text>
+            <text x="510" y="246" fill="#637081" font-size="12">бывшая заправка Extra</text>
+          </g>
+
+          <circle cx="425" cy="184" r="74" fill="#d8a139" opacity="0.08" />
+          <circle cx="425" cy="184" r="46" fill="#d8a139" opacity="0.14" />
+          <path d="M425 106 C386 106 354 137 354 176 C354 226 425 291 425 291 C425 291 496 226 496 176 C496 137 464 106 425 106Z" fill="#d8a139" filter="url(#tdh-pin-shadow)" />
+          <circle cx="425" cy="176" r="24" fill="#06080c" />
+          <text x="425" y="183" text-anchor="middle" fill="#d8a139" font-family="Inter, Arial" font-size="15" font-weight="900">TDH</text>
+
+          <g class="transition duration-300 group-hover:opacity-100" opacity="0.92">
+            <rect x="450" y="150" width="210" height="64" rx="6" fill="#05080c" fill-opacity="0.92" stroke="#d8a139" stroke-opacity="0.55" />
+            <text x="468" y="176" fill="#ffffff" font-family="Inter, Arial" font-size="18" font-weight="800">TDH Studio</text>
+            <text x="468" y="198" fill="#d8a139" font-family="Inter, Arial" font-size="13" font-weight="700">ул. Остапенко 45А</text>
+          </g>
+        </svg>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_46%,transparent_0%,transparent_36%,rgba(2,4,6,0.28)_72%,rgba(2,4,6,0.82)_100%)]"></div>
+        <div class="absolute left-5 top-5 rounded-[3px] border border-white/[0.1] bg-[#05080c]/85 px-4 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-100 backdrop-blur-md">
+          Открыть в Яндекс.Картах
+        </div>
+      </a>
       <div class="flex flex-col gap-4 border-t border-white/[0.08] bg-[#05080c] p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-[#d8a139]">TDH Studio на карте</p>
